@@ -1,0 +1,45 @@
+BUILDING SYSTEM RODIN REPORT
+GROUP I
+Niwahereza Darius           23/U/15983/PS
+Swale Sebabe Abdu         23/U/23779
+Katongole Julius                23/U/09305/PS
+Ainebyona Alvin Police     23/U/05289/PS
+Sekyeza Nunda Elroy        23/U/1379
+
+Current Implementation in Rodin
+BUILDING CONTEXT
+
+ 
+
+
+
+
+
+
+  c 
+CHANGES MADE TO THE ORIGINAL SPECIFICATION
+Initially we had two variables in and out to keep track of users in which building or outside,
+Then in our second specification added a partial function called location to cater for user’s locations this is because with partial functions the element in the domain can only be mapped to one element in the range hence satisfying the requirement that a user can be located in one building at time. This also caters for users who happen to be outside that not all elements for the partial function are defined. (Not all users who are in a building).
+
+
+CHALLENGES ENCOUNTERED
+1)The first challenge we encountered was the event for adding a permission failed to discharge because there was a violation of one the invariants that is invariant4 dom(permission)⊆register that is incase for the users who have been given permission would they be among the register set.
+
+How we solved the challenge?   
+Initially we had not catered for the user to be registered before being given permission since this violating the invariant dom(permission)⊆register hence the proof obligation was not getting discharged 
+ 
+The image shows how we added a guard to show explicitly that the user was not a member of register before being given permission. And in the action, we first register the user and give them permission and this got the proof obligation to discharge.
+The same went for the permission being revoked 
+ 
+We had not catered for the location set initially incase the user was in a given location and it was to handle users being moved out of a building when their permission is revoked 
+ 
+Main take away from the exercise
+this resolves around the learning outcomes from modelling, analyzing and refining system specification that supports formal verification.
+1.	Enhanced Understanding of System Requirements: Rodin allows you to formally specify requirements, clarifying ambiguities and inconsistencies early in the design process.
+2.	Improved System Design through Refinement: The refinement process helps evolve a high-level model into more detailed levels, allowing you to incrementally approach a fully functioning system while ensuring each step is correct.
+3.	Error Detection and Reduction: Using Rodin's formal verification tools, you can detect logical errors in specifications, significantly reducing potential issues in later stages of development.
+4.	Improved Reliability and Safety: Through theorem proving and model checking, Rodin enhances system reliability and safety, which is crucial in systems where failure has significant consequences.
+5.	Automation in Verification: Rodin automates certain verification tasks, making the model-checking process more efficient and allowing you to focus on higher-level design decisions.
+6.	Documentation and Traceability: Each model refinement step provides a clear trail, making it easier to document design decisions and changes systematically.
+
+
