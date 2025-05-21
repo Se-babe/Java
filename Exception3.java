@@ -1,34 +1,18 @@
-
 import java.io.*;
-
-
-public class Exception3{
-
-    static int divideByZero(int a,int b){
-        int i =a/b;
-        return i;
+//use of throws 
+public class Exception3 {
+    
+    public static void findFile()throws IOException {
+        File obj=new File("example.txt");
+        FileInputStream fis=new FileInputStream(obj);
     }
-    static int computeDivision(int a,int b){
-        int result = 0;
-
-        try{
-            result=divideByZero(int a, int b);
-        }catch(NumberFormatException e){
-            System.out.println("NumberFormatException");
-            e.printStackTrace();
-        }
-        return result;
-    }
-    public static void main(String[] args){
-        int a=5;
-        int b=0;
-        try{
-        }
-        catch(ArithmeticException e){
+    public static void main(String[] args) {
+        try {
+            findFile();
+        } catch (IOException e) {
+            // TODO: handle exception
             System.out.println(e.getMessage());
+
         }
-        
     }
 }
-    
-

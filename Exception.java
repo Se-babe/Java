@@ -1,24 +1,11 @@
-public class Exception{
-
-    public Exception(String message) {
-        //TODO Auto-generated constructor stub
-    }
-
+public class Exception {
     public static void main(String[] args) {
-        int a=5;
-        int b=0;
-        try{
-            System.out.println(a/b);
+        try {
+            int divideByZero=5/0;
+            System.out.println("this is the exception class");
+        } catch (ArithmeticException e) {
+            System.out.println("this is an arithmetic exception"+e.getMessage());
         }
-        catch(ArithmeticException e){
-          //  e.printStackTrace();
-         // System.out.println(e.toString());
-         System.out.println(e.getMessage());
-        }
-    }
-
-    public void printStackTrace() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'printStackTrace'");
     }
 }
+//use of try catch block
